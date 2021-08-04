@@ -4,7 +4,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: () => import('@/views/Main')
+    component: () => import('@/views/MainPage')
   },
   {
     path: '/posts/:id',
@@ -14,7 +14,7 @@ const routes = [
   {
     path: '/posts/edit/:id',
     name: 'Edit',
-    component: () => import('@/views/EditPost')
+    component: () => import('@/views/PostEditPage')
   },
 ]
 

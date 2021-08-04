@@ -7,19 +7,27 @@
         <p id="date">{{post.createdAt.substring(0,10)}}</p>
       </div>
       <div class="buttons">
-        <work-button  @click="onClick">Read post</work-button>
-        <work-button :color="$store.state.colors.style.one" @click="$emit('deleteOne', post)">Delete post</work-button>
-        <work-button :color="$store.state.colors.style.two" @click="editPost">Edit post</work-button>
+        <BaseWorkButton  @click="onClick">Read post</BaseWorkButton>
+        <BaseWorkButton :color="one" @click="$emit('deleteOne', post)">Delete post</BaseWorkButton>
+        <BaseWorkButton :color="two" @click="editPost">Edit post</BaseWorkButton>
       </div>
     </div>
 </template>
 
 <script>
+import {mapState} from 'vuex'
 import {useRouter} from 'vue-router'
 import {toRef} from 'vue'
 export default {
-  name: "Post",
-    props: {
+  name: "PostListItem",
+  computed: {
+    ...mapState({
+      one: state => state.miscellaneous.style.BSweet,
+      two: state =>  state.miscellaneous.style.LSBrown,
+      three: state => state.miscellaneous.style.CBlue
+    }),
+  },
+  props: {
     post: {
       type: Object,
       required: true

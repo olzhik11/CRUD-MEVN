@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "workButton",
+  name: "BaseWorkButton",
   props: {
     color: {
       type: String,

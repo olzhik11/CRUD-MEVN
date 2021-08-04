@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "justButton"
+  name: "BaseNavButton"
 }
 </script>
 

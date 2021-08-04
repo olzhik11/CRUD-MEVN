@@ -1,5 +1,5 @@
 <template>
-  <navbar></navbar>
+  <TheNavbar/>
   <div class="postPage">
     <div class="post">
       <p id="title">{{post.title}}</p>
@@ -7,15 +7,18 @@
       <p id="body">{{post.body}}</p>
     </div>
   </div>
-  <Footer></Footer>
+  <TheFooter/>
 </template>
 
 <script>
 import postPostPage from "@/hooks/postPostPage";
 import {useRoute} from 'vue-router'
 import {onMounted} from "vue";
+import TheNavbar from "@/components/UI/TheNavbar";
+import TheFooter from "@/components/UI/TheFooter";
 export default {
-  name: "postPage",
+  name: "PostPage",
+  components: {TheFooter, TheNavbar},
   setup() {
     const route = useRoute()
     const id = route.params.id

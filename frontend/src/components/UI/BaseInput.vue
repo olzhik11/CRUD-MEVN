@@ -3,7 +3,7 @@
 </template>
 <script>
 export default {
-  name: "justInput",
+  name: "BaseInput",
   props: {
       modelValue: [String, Number]
   },

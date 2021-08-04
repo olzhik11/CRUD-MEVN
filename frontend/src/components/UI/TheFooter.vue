@@ -2,25 +2,29 @@
   <div class="footer">
     <div class="info">
       <p>Built with</p>
-      <div class="infoIcons">
-        <img class="icon" src="../assets/mongodb-icon.svg">
-        <img class="icon" src="../assets/expressjs-icon.svg">
-        <img class="icon" src="../assets/vuejs-icon.svg">
-        <img class="icon" src="../assets/nodejs-icon.svg">
+      <div class="infoIcons" v-for="icon in icons" :key="icon.id">
+        <img class="icon"  :src="icon.src" :alt="icon.alt">
       </div>
     </div>
     <div class="links">
       <a href="https://github.com/olzhik11">
-      <img class="icon" src="../assets/iconmonstr-github-1.svg" :style="{color: 'white'}">
+      <img class="icon" src="../../assets/iconmonstr-github-1.svg" alt="GitHub">
       </a>
     </div>
   </div>
 </template>
 
 <script>
-
 export default {
-  name: "Footer"
+  name: "TheFooter",
+  data() {
+    return {
+      icons: [{src: require("../../assets/mongodb-icon.svg"), alt: "MongoDB"},
+          {src: require("../../assets/expressjs-icon.svg"), alt: "Express.js"},
+          {src: require("../../assets/vuejs-icon.svg"), alt: "Vue.js"},
+          {src: require("../../assets/nodejs-icon.svg"), alt: "GitHub"}]
+    }
+  }
 }
 </script>
 

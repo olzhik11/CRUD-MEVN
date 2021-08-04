@@ -2,7 +2,7 @@
   <div class="postList">
   <div v-if="posts.length > 0" class="ifPostList">
     <transition-group name="list" tag="p">
-    <post v-for="post in posts" :post="post" :key="post._id" @deleteOne="$emit('deleteOne', post)" class="list-item"/>
+    <PostListItem v-for="post in posts" :post="post" :key="post._id" @deleteOne="$emit('deleteOne', post)" class="list-item"/>
     </transition-group>
   </div>
   <h1 v-else :style="{color: 'red'}"><strong>There are no posts</strong></h1>
@@ -10,8 +10,10 @@
 </template>
 
 <script>
+import PostListItem from "@/components/PostListItem";
 export default {
   name: "PostList",
+  components: {PostListItem},
   props: {
     posts: {
       type: Array,

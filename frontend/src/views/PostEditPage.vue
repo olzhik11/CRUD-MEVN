@@ -1,23 +1,34 @@
 <template>
-  <Navbar/>
+  <TheNavbar/>
   <div class="editPage">
     <div class="window">
       <form class="postInput">
-        <just-input class="input" type="text" v-model="post.title" placeholder="Title"/>
-        <just-input class="input" type="text" v-model="post.description" placeholder="Description"/>
+        <BaseInput class="input" type="text" v-model="post.title" placeholder="Title"/>
+        <BaseInput class="input" type="text" v-model="post.description" placeholder="Description"/>
         <textarea class="input" rows="10" cols="10" v-model="post.body" placeholder="Body"></textarea>
-      <work-button :color="$store.state.colors.style.three" class="inputButton" @click="editPost">Edit post</work-button>
-      <work-button :color="$store.state.colors.style.three" class="inputButton" @click="deletePost">Delete post</work-button>
+      <BaseWorkButton :color="three" class="inputButton" @click="editPost">Edit post</BaseWorkButton>
+      <BaseWorkButton :color="three" class="inputButton" @click="deletePost">Delete post</BaseWorkButton>
       </form>
     </div>
   </div>
-  <Footer/>
+  <TheFooter/>
 </template>
 <script>
+import {mapState} from 'vuex'
 import postEditPost from '@/hooks/postEditPost'
 import {useRoute, useRouter} from 'vue-router'
+import TheNavbar from "@/components/UI/TheNavbar";
+import TheFooter from "@/components/UI/TheFooter";
 export default {
-  name: "EditPost",
+  name: "PostEditPage",
+  components: {TheFooter, TheNavbar},
+  computed: {
+    ...mapState({
+      one: state => state.miscellaneous.style.BSweet,
+      two: state =>  state.miscellaneous.style.LSBrown,
+      three: state => state.miscellaneous.style.CBlue
+    }),
+  },
   setup() {
     const router = useRouter()
     const route = useRoute()

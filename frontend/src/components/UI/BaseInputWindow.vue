@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "inputWindow",
+  name: "BaseInputWindow",
   props: {
     show: Boolean
   },

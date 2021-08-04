@@ -1,7 +1,7 @@
 import {createStore} from 'vuex'
-import {colors} from '@/store/colors'
+import {miscellaneous} from './miscellaneous'
 export default createStore({
     modules: {
-        colors
+        miscellaneous: miscellaneous
     }
 })

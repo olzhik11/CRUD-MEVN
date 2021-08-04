@@ -1,17 +1,17 @@
 <template>
   <div class="navbar">
     <div>
-      <just-button  @click="$router.push('/')" :style="{fontSize: '30px'}">CRUD App</just-button>
+      <BaseNavButton  @click="$router.push('/')" :style="{fontSize: '30px'}">CRUD App</BaseNavButton>
     </div>
     <div class="nav_btns">
-      <just-button id="button" @click="$router.push('/')">Home</just-button>
+      <BaseNavButton id="button" @click="$router.push('/')">Home</BaseNavButton>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Navbar",
+  name: "TheNavbar",
 }
 </script>
 

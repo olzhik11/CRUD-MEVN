@@ -1,9 +1,9 @@
 <template>
   <form @submit.prevent class="inputForm">
-    <just-input type="text" v-model="post.title" placeholder="Title"/>
-    <just-input type="text" v-model="post.description" placeholder="Description"/>
+    <BaseInput type="text" v-model="post.title" placeholder="Title"/>
+    <BaseInput type="text" v-model="post.description" placeholder="Description"/>
     <textarea rows="10" cols="10" v-model="post.body" placeholder="Body"></textarea>
-    <work-button @click=createPost class="inputButton">{{method.name}}</work-button>
+    <BaseWorkButton @click=createPost class="inputButton">{{method.name}}</BaseWorkButton>
   </form>
 </template>
 
