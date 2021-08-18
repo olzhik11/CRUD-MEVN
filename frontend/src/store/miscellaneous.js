@@ -6,4 +6,5 @@ export const miscellaneous = {
             CBlue: '#0e171d'
         },
     }),
+
 }

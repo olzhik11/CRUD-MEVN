@@ -1,7 +1,8 @@
 <template>
-  <button class="button">
-    <slot></slot>
-  </button>
+  <v-btn class="button" color="#1d3131" text-color="#a3fab4" >
+    <slot>
+    </slot>
+  </v-btn>
 </template>
 
 <script>
@@ -11,20 +12,7 @@ export default {
 </script>
 
 <style scoped>
-*{
-  font-family: Poppins;
-  font-size: 20px;
-}
 .button{
-  padding: 5px;
-  margin: 10px;
-  color: white;
-  background: none;
-  border: none;
-  transition: all 0.5s ease;
-  cursor: pointer;
-}
-.button:hover{
-  color: #a3fab4;
+  margin: 20px ;
 }
 </style>

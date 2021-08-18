@@ -3,7 +3,7 @@
     <BaseInput type="text" v-model="post.title" placeholder="Title"/>
     <BaseInput type="text" v-model="post.description" placeholder="Description"/>
     <textarea rows="10" cols="10" v-model="post.body" placeholder="Body"></textarea>
-    <BaseWorkButton @click=createPost class="inputButton">{{method.name}}</BaseWorkButton>
+    <BaseWorkButton color="black" @click=createPost class="inputButton">{{method.name}}</BaseWorkButton>
   </form>
 </template>
 
@@ -27,16 +27,12 @@ export default {
   },
   methods: {
     createPost() {
-      this.$emit('create', this.post)
-      this.post = {
-        title: '',
-        body: '',
-        description: '',
-      }
+      if (this.post.title && this.post.body && this.post.description) {
+        this.$emit('create', this.post)
+        this.post = {title: '', body: '', description: '',}
+      } else {this.$toast.show('Please fill all the fields.', {type: 'error'})}
     },
-
   }
-
 }
 </script>
 
@@ -45,10 +41,7 @@ export default {
   color: #0e171d;
   border-color: #0e171d;
 }
-.inputButton:hover{
-  color: #0e171d;
-  border-color: #0e171d;
-}
+
 .inputForm{
   display: flex;
   flex-direction: column;

@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import postPostPage from "@/hooks/postPostPage";
+import postPageHooks from "@/hooks/PostPageHooks";
 import {useRoute} from 'vue-router'
 import {onMounted} from "vue";
 import TheNavbar from "@/components/UI/TheNavbar";
@@ -22,7 +22,7 @@ export default {
   setup() {
     const route = useRoute()
     const id = route.params.id
-    const {post, getPost} = postPostPage(id)
+    const {post, getPost} = postPageHooks(id)
     onMounted(getPost(id))
     return {post}
   }
@@ -42,7 +42,7 @@ export default {
   padding: 20px;
   margin: 30px;
   border: 2px solid #a3fab4;
-  border-radius: 5px;
+  border-radius: 10px;
   color: white;
 }
 #title{

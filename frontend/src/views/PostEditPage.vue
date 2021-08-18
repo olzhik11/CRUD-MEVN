@@ -15,7 +15,7 @@
 </template>
 <script>
 import {mapState} from 'vuex'
-import postEditPost from '@/hooks/postEditPost'
+import postEditPageHooks from '@/hooks/PostEditPageHooks'
 import {useRoute, useRouter} from 'vue-router'
 import TheNavbar from "@/components/UI/TheNavbar";
 import TheFooter from "@/components/UI/TheFooter";
@@ -33,17 +33,13 @@ export default {
     const router = useRouter()
     const route = useRoute()
     const id = route.params.id
-    const {deletePost, editPost, fetching, post} = postEditPost(id, router)
+    const {deletePost, editPost, fetching, post} = postEditPageHooks(id, router)
     return {deletePost, editPost, fetching, post}
   }
 }
 </script>
 
 <style scoped>
-*{
-  font-family: Poppins;
-  font-size: 15px;
-}
 .editPage{
   display: flex;
   justify-content: center;
@@ -74,9 +70,6 @@ export default {
 }
 .inputButton{
   color: #0e171d;
-  border-color: #0e171d;
-}
-.inputButton:hover{
   border-color: #0e171d;
 }
 </style>

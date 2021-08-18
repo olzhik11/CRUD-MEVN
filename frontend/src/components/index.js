@@ -1,11 +1,11 @@
 import BaseInputWindow from "@/components/UI/BaseInputWindow";
-import BaseNavButton from "@/components/UI/BaseNavButton";
 import BaseInput from "@/components/UI/BaseInput";
 import BaseWorkButton from "@/components/UI/BaseWorkButton";
+import BaseNavButton from "@/components/UI/BaseNavButton";
 
 export default {
-    BaseInputWindow,
     BaseNavButton,
+    BaseInputWindow,
     BaseInput,
     BaseWorkButton,
 }

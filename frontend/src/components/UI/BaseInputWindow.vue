@@ -26,6 +26,7 @@ export default {
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   position: fixed;
+  z-index: 1;
 }
 .windowContent{
   display: flex;

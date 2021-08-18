@@ -8,7 +8,7 @@
     </div>
     <div class="links">
       <a href="https://github.com/olzhik11">
-      <img class="icon" src="../../assets/iconmonstr-github-1.svg" alt="GitHub">
+        <v-icon color="white">mdi-github</v-icon>
       </a>
     </div>
   </div>
@@ -30,8 +30,7 @@ export default {
 
 <style scoped>
 *{
-  font-family: Poppins;
-  color: white;
+  text-decoration: none;
 }
 .footer{
   background: #0e171d;
