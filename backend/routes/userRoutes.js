@@ -12,8 +12,6 @@ router.post('/user/login', userController.loginUser)
 
 router.post('/user/register', userController.registerUser)
 
-router.get('/user/protected', auth, userController.protectedRoute)
-
 router.get('/user/:username', auth, userController.userPage)
 
 module.exports = router

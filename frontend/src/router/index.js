@@ -33,14 +33,6 @@ const routes = [
     component: () => import('@/views/LoginPage')
   },
   {
-    path: '/user/protected',
-    name: 'Protected',
-    component: () => import('@/views/ProtectedRoute'),
-    meta: {
-      requiresAuth: true
-    },
-  },
-  {
     path: '/posts/searchPosts',
     name: 'SearchPosts',
     component: () => import('@/views/SearchPostsPage'),

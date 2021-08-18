@@ -46,9 +46,6 @@ const registerUser = (req, res) => {
         })
         .catch((err) => {console.log(err)})
 }
-const protectedRoute = (req, res) => {
-    res.status(200).json({isAuth: true, message: "You are authorized."})
-}
 
 const userPage = (req, res) => {
     if (!req.body){
@@ -62,6 +59,5 @@ const userPage = (req, res) => {
 module.exports = {
     loginUser,
     registerUser,
-    protectedRoute,
     userPage
 }
